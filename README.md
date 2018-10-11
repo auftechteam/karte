@@ -9,4 +9,10 @@
 2. Navigate to `http://localhost:9000`.
 
 ## In Production derzeit wie oben mit nginx reverse proxy vorgeschaltet
-
+##Die wichtigsten Dateien hier sind
+events-map.css
+pyserve.py
+VeranstaltungsUpdater.py
+index.html
+MapManager.js
+mapbox
