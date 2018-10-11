@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InvalidationBatch xmlns="http://cloudfront.amazonaws.com/doc/2015-04-17/">
+   <Paths>
+      <Quantity>4</Quantity>
+      <Items>
+         <Path>/js/event-data.gz</Path>
+         <Path>/js/event-data.js</Path>
+         <Path>/d/events.json</Path>
+         <Path>/d/us_postal_code.gz</Path>`
+      </Items>
+   </Paths>
+   <CallerReference>$invalidation_id</CallerReference>
+</InvalidationBatch>
