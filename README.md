@@ -1,5 +1,8 @@
 # Karte
 
+
+## Im Prinzip sind die meisten Dateien hier noch Artefakte daraus, dass wir dass von der Sanders Kampagne geforked haben, das schadet gerade nicht macht es aber unübersichtlich, wenn wir die Zeit finden, sollten wir das also raus nehmen.
+
 ## zum Testen: 
 
 1. `python -m SimpleHTTPServer 9000`
