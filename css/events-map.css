@@ -322,6 +322,28 @@ html, body {
         margin-left: 10px; }
         html section#header nav #nav li *, body section#header nav #nav li * {
           vertical-align: middle; }
+  #header #cta-spiel {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    font-family: canada-type-gibson, sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: #5B5D61; }
+    /* line 25, map/static/scss/components/_header.scss */
+    #header #cta-spiel strong {
+      font-weight: 600; }
+    @media (max-width: 1280px) {
+      /* line 15, map/static/scss/components/_header.scss */
+      #header #cta-spiel {
+        left: 220px;
+        transform: translateY(-50%); } }
+    @media (max-width: 1024px) {
+      /* line 15, map/static/scss/components/_header.scss */
+      #header #cta-spiel {
+        display: none; } }
     html section#header div#spiel, body section#header div#spiel {
       padding-top: 15px;
       margin-left: 15px;
