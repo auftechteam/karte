@@ -312,7 +312,7 @@ var MapManager = (function($, d3, leaflet) {
     var addItemToMap = function(latLng, className) {
 
       // SNT events
-      if (className.match(/meet-senator-turner/)){
+      if (className.match(/Kennenlerntreffen/)){
         L.circleMarker(latLng, {
           radius: 7,
           className: className,
@@ -393,7 +393,7 @@ var MapManager = (function($, d3, leaflet) {
      *   Class name for map item
      */
     function getZIndex(className) {
-      if (className.match(/meet-senator-turner/)) {
+      if (className.match(/Kennenlerntreffen/)) {
         return 10
       } else if(className.match(/official\-event/ig)) {
         return 9
