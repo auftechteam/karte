@@ -186,6 +186,25 @@ var MapManager = (function($, d3, leaflet) {
           // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
       });
  var RED_ICON = L.icon({
+          iconUrl: '//aufstehen.io/img/mega.png',
+	//shadowUrl: '//map.aufstehen.io/img/leaf-shadow.png',
+          iconSize:     [17, 14], // size of the icon
+         //  shadowSize:   [50, 64], // size of the shadow
+          // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+          // shadowAnchor: [4, 62],  // the same for the shadow
+          // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+      })
+ var GREEN_ICON = L.icon({
+          iconUrl: '//aufstehen.io/img/flag.png',
+	//shadowUrl: '//map.aufstehen.io/img/leaf-shadow.png',
+          iconSize:     [17, 14], // size of the icon
+         //  shadowSize:   [50, 64], // size of the shadow
+          // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+          // shadowAnchor: [4, 62],  // the same for the shadow
+          // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+      });
+	    
+  var BLUE_ICON = L.icon({
           iconUrl: '//aufstehen.io/img/meeting.png',
 	//shadowUrl: '//map.aufstehen.io/img/leaf-shadow.png',
           iconSize:     [17, 14], // size of the icon
@@ -313,14 +332,28 @@ var MapManager = (function($, d3, leaflet) {
 
       // SNT events
       if (className.match(/Kennenlerntreffen/)){
-        L.circleMarker(latLng, {
-          radius: 7,
-          className: className,
-          color: 'white',
-          fillColor: '#8527FF',
-          opacity: 0.8,
-          fillOpacity: 0.7,
-          weight: 2
+        L.marker(latLng, {
+         // radius: 10,
+          icon: GREEN_ICON,
+	  className: className//,
+         // color: 'white',
+          //fillColor: '#1462A2',
+          //opacity: 0.8,
+         // fillOpacity: 0.7,
+          //weight: 2
+        }).on('click', function(e) { _popupEvents(e); })
+          .addTo(overlays);
+
+      } else if (className.match(/Stammtisch/)){
+        L.marker(latLng, {
+         // radius: 10,
+          icon: BLUE_ICON,
+	  className: className//,
+         // color: 'white',
+          //fillColor: '#1462A2',
+          //opacity: 0.8,
+         // fillOpacity: 0.7,
+          //weight: 2
         }).on('click', function(e) { _popupEvents(e); })
           .addTo(overlays);
 
