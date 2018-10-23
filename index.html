@@ -167,12 +167,12 @@
 <script src='./js/MapManager.js?v=5'></script>
 <script type='text/javascript'>
 window.eventTypeFilters = [
-  /*{
-    name: 'Meet Senator Turner',
-    id:'meet-senator-turner',
+  {
+    name: 'Kennenlerntreffen',
+    id:'kennenlerntreffen',
     onItem: "<span class='map-purple-circle'></span>"
   },
-  {
+  /*{
     name: 'Official Event',
     id: 'official-event',
     onItem: "<span class='map-red-circle'></span>"
@@ -224,7 +224,7 @@ $.ajax({
               case "Phone Bank" : d.filters.push("phonebank"); break;
               case "Volunteer Activity or Meeting" : d.filters.push("volunteer"); break;
               case "Party Meetings" : d.filters.push("party-meetings"); break;
-              case "Meet Senator Turner" : d.filters.push("meet-senator-turner"); break;
+              case "Kennenlerntreffen" : d.filters.push("kennenlerntreffen"); break;
               case "Rally" : d.filters.push("rally"); break;
               default: d.filters.push('other'); break;
             }
