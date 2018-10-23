@@ -55,6 +55,7 @@ var Event = (function($) { return function(properties) {
           shiftElems = $("<div class='shift-details'/>")
                          .append("<h5>Shifts</h5>")
                          .append($("<ul/>").append(shiftList))
+
         } // end of creating shift items
         var rendered = $("<div class='lato'/>")
           .addClass('event-item ' + that.className)
@@ -180,6 +181,15 @@ var MapManager = (function($, d3, leaflet) {
           iconUrl: '//d1y0otadi3knf6.cloudfront.net/img/icon/star.png',
           iconSize:     [17, 14], // size of the icon
           // shadowSize:   [50, 64], // size of the shadow
+          // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+          // shadowAnchor: [4, 62],  // the same for the shadow
+          // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+      });
+ var RED_ICON = L.icon({
+          iconUrl: '//map.aufstehen.io/img/meeting.png',
+	//shadowUrl: '//map.aufstehen.io/img/leaf-shadow.png',
+          iconSize:     [17, 14], // size of the icon
+         //  shadowSize:   [50, 64], // size of the shadow
           // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
           // shadowAnchor: [4, 62],  // the same for the shadow
           // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
@@ -329,14 +339,15 @@ var MapManager = (function($, d3, leaflet) {
 
       } else {
         // Other events
-        L.circleMarker(latLng, {
-          radius: 5,
-          className: className,
-          color: 'white',
-          fillColor: '#1462A2',
-          opacity: 0.8,
-          fillOpacity: 0.7,
-          weight: 2
+        L.marker(latLng, {
+         // radius: 10,
+          icon: RED_ICON,
+	  className: className//,
+         // color: 'white',
+          //fillColor: '#1462A2',
+          //opacity: 0.8,
+         // fillOpacity: 0.7,
+          //weight: 2
         }).on('click', function(e) { _popupEvents(e); })
           .addTo(overlays);
       }
