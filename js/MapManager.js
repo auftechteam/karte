@@ -186,7 +186,7 @@ var MapManager = (function($, d3, leaflet) {
           // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
       });
  var RED_ICON = L.icon({
-          iconUrl: '//map.aufstehen.io/img/meeting.png',
+          iconUrl: '//aufstehen.io/img/meeting.png',
 	//shadowUrl: '//map.aufstehen.io/img/leaf-shadow.png',
           iconSize:     [17, 14], // size of the icon
          //  shadowSize:   [50, 64], // size of the shadow
