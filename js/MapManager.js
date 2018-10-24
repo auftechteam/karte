@@ -103,7 +103,7 @@ var Event = (function($) { return function(properties) {
                   $("<span class='rsvp-count'/>").text(that.properties.attendee_count + " SIGN UPS")
                 )
             )
-            .append($("<div class='rsvp-attending'/>").html('<a href="https://aufstehen.de" target="_blank">Du nimmst teil</a>'))
+            .append($("<div class='rsvp-attending'/>").html('<a href="http://aufstehen.de" target="_blank">Du nimmst teil</a>'))
           );
 
         return rendered.html();
