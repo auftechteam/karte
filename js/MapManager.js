@@ -62,7 +62,8 @@ var Event = (function($) { return function(properties) {
           .append($("<div />").addClass('event-item lato ' + that.className+'').attr("lat",lat).attr("lon",lon) //appended lat-lon attributes to this class for marker highlighting
             .append(that.properties.is_campaign_office ? $("<a class='office-image' href='" + (that.properties.opening_event ? that.properties.opening_event : that.properties.url) + "' />").append($("<img src='" + that.properties.image + "'>")) : "")
             .append($("<h5 class='time-info'/>").html((distance ? ("<span class='time-info-dist'>" + distance + "mi &nbsp;&nbsp;</span>") : "") + datetime + (endtime ? " - " + endtime : "" )))
-            .append($("<h3/>").html("<a target='_blank' href='" +  (that.properties.opening_event ? that.properties.opening_event : that.properties.url) + "'>" + that.properties.name + "</a>"))
+            //.append($("<h3/>").html("<a target='_blank' href='" +  (that.properties.opening_event ? that.properties.opening_event : that.properties.url) + "'>" + that.properties.name + "</a>"))
+		  .append($("<h3/>").html("<a target='_blank' href='"https://aufstehen.de"'>" + that.properties.name + "</a>"))
             .append(that.properties.is_official ? $("<h5 class='official-tag'/>").text("Official Event") : "")
             .append($("<span/>").addClass("label-icon"))
             .append($("<h5 class='event-type'/>").text(that.properties.event_type_name))
@@ -79,9 +80,9 @@ var Event = (function($) { return function(properties) {
                              .append($("<input type='hidden' name='has_shift'/>").val(shiftElems != null))
                              .append($("<input type='hidden' name='zipcode'/>").val(zipcode?zipcode:that.properties.venue_zip))
                              .append($("<input type='hidden' name='id_obfuscated'/>").val(that.properties.id_obfuscated))
-                             .append($("<input type='text' name='phone' placeholder='Phone Number'/>"))
-                             .append($("<input type='text' name='email' placeholder='Email Address'/>"))
-                             .append($("<input type='submit' class='lato' value='Confirm RSVP' />"))
+                             .append($("<input type='text' name='phone' placeholder='Telefonnummer'/>"))
+                             .append($("<input type='text' name='email' placeholder='Email Adresse'/>"))
+                             .append($("<input type='submit' class='lato' value='Zusagen' />"))
                       )
                    )
             .append(
@@ -101,7 +102,7 @@ var Event = (function($) { return function(properties) {
                   $("<span class='rsvp-count'/>").text(that.properties.attendee_count + " SIGN UPS")
                 )
             )
-            .append($("<div class='rsvp-attending'/>").html('<a href="https://jetzt.aufstehen.de/page/event/myevents" target="_blank">You are attending this event</a>'))
+            .append($("<div class='rsvp-attending'/>").html('<a href="https://aufstehen.de" target="_blank">Du nimmst teil</a>'))
           );
 
         return rendered.html();
