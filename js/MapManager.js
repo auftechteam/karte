@@ -27,7 +27,7 @@ var Event = (function($) { return function(properties) {
         var moreThan5RSVP = that.properties.attendee_count && parseInt(that.properties.attendee_count) > 5 ? true : false;
 
         if (!that.properties.attendee_count) { moreThan5RSVP = false; }
-
+	moment.locale('de')
         var datetime = that.properties.id_obfuscated && that.properties.id_obfuscated == '4gw5k' ? 'Mar 20 (Sun) 11:00am' : moment(that.properties.start_dt).format("MMM DD (ddd) h:mma")
         var lat = that.properties.latitude
         var lon = that.properties.longitude
@@ -74,15 +74,15 @@ var Event = (function($) { return function(properties) {
             //Append RSVP Form
             .append($("<div class='event-rsvp-activity' />")
                       .append($("<form class='event-form lato'>")
-                             .append($("<h4/>").html("RSVP to <strong>" + that.properties.name + "</strong>"))
+                             .append($("<h4/>").html("Anmelden zu <strong>" + that.properties.name + "</strong>"))
                              .append($("<div class='event-error' />"))
                              .append(shiftElems ? shiftElems : "")
                              // .append($("<input type='text' name='name' placeholder='Name'/>"))
                              .append($("<input type='hidden' name='has_shift'/>").val(shiftElems != null))
                              .append($("<input type='hidden' name='zipcode'/>").val(zipcode?zipcode:that.properties.venue_zip))
                              .append($("<input type='hidden' name='id_obfuscated'/>").val(that.properties.id_obfuscated))
-                             .append($("<input type='text' name='phone' placeholder='Telefonnummer'/>"))
                              .append($("<input type='text' name='email' placeholder='Email Adresse'/>"))
+			     .append($("<input type='text' name='guests' placeholder='Teilnehmende'/>"))
                              .append($("<input type='submit' class='lato' value='Zusagen' />"))
                       )
                    )
@@ -97,7 +97,7 @@ var Event = (function($) { return function(properties) {
                     // .attr("href", that.properties.is_campaign_office ? (that.properties.opening_event ? that.properties.opening_event : that.properties.url) : that.properties.url)
                     .attr("data-id", that.properties.id_obfuscated)
                     .attr("data-url", (that.properties.opening_event ? that.properties.opening_event : that.properties.url))
-                    .text(that.isFull ? "FULL" : that.properties.is_campaign_office ? (that.properties.opening_event ? "RSVP" : "Get Directions") : "RSVP")
+                    .text(that.isFull ? "FULL" : that.properties.is_campaign_office ? (that.properties.opening_event ? "Anmelden" : "Get Directions") : "Anmelden")
                 )
                 .append(
                   $("<span class='rsvp-count'/>").text(that.properties.attendee_count + " SIGN UPS")
@@ -808,13 +808,13 @@ var VotingInfoManager = (function($) {
       shifts = query['shift_id'].join();
     }
 
-    if (!query['phone'] || query['phone'] == '') {
-      $error.text("Phone number is required").show();
+    if (!query['guests'] || query['guests'] == '') {
+      $error.text("Anzahl der Teilnehmenden ?").show();
       return false;
     }
 
     if (!query['email'] || query['email'] == '') {
-      $error.text("Email is required").show();
+      $error.text("Gib Deine Email an").show();
       return false;
     }
 
@@ -839,7 +839,7 @@ var VotingInfoManager = (function($) {
       dataType: 'jsonp',
       data: {
         // name: query['name'],
-        phone: query['phone'],
+        guests: query['guests'],
         email: query['email'],
         zip: query['zipcode'],
         shift_ids: shifts,
@@ -864,7 +864,7 @@ var VotingInfoManager = (function($) {
 
         $this.closest("li").attr("data-attending", true);
 
-        $this.html("<h4 style='border-bottom: none'>RSVP Successful! Thank you for joining to this event!</h4>");
+        $this.html("<h4 style='border-bottom: none'>Anmeldung erfolgreich! Danke für Deine Teilnahme!</h4>");
         $container.delay(1000).fadeOut('fast')
       }
     })
