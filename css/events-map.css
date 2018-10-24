@@ -478,9 +478,6 @@ html, body {
             line-height: 1; }
             html section#activity-area article#map div.popup-list-container ul li div.rsvp-attending a, body section#activity-area article#map div.popup-list-container ul li div.rsvp-attending a {
               color: white; }
-            html section#activity-area article#map div.popup-list-container ul li div.rsvp-attending:after, body section#activity-area article#map div.popup-list-container ul li div.rsvp-attending:after {
-              left: 128px;
-              bottom: 0px; }
           html section#activity-area article#map div.popup-list-container ul li div.event-rsvp-activity, body section#activity-area article#map div.popup-list-container ul li div.event-rsvp-activity {
             top: auto;
             bottom: 1px;
@@ -798,20 +795,9 @@ html, body {
     color: white; }
     html li[data-attending=true] div.rsvp-attending a, body li[data-attending=true] div.rsvp-attending a {
       color: white; }
-    html li[data-attending=true] div.rsvp-attending:after, body li[data-attending=true] div.rsvp-attending:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      position: absolute;
-      border-right: 8px solid transparent;
-      border-top: 7px solid #147FD7;
-      left: 128px;
-      bottom: 0px;
-      border-bottom: 9px solid #147FD7; }
   html li[data-attending=true] div.social-area, body li[data-attending=true] div.social-area {
     display: none; }
-  html li[data-attending=false] div.rsvp-attending, body li[data-attending=false] div.rsvp-attending {
+  html li[data-attending=false] div.ending, body li[data-attending=false] div.rsvp-attending {
     display: none; }
   html li[data-attending=false] div.social-area, body li[data-attending=false] div.social-area {
     display: block; }
