@@ -7,7 +7,6 @@ var Event = (function($) { return function(properties) {
       this.LatLng = [parseFloat(this.properties.latitude),
                      parseFloat(this.properties.longitude)];
       moment.locale('de');
-      moment.updateLocale('de');
       this.startTime = moment(this.properties.start_dt)._d;
       this.endTime = this.properties.end_dt ? moment(this.properties.end_dt)._d : null;
       this.visible = true;
