@@ -190,7 +190,7 @@ var MapManager = (function($, d3, leaflet) {
  var RED_ICON = L.icon({
           iconUrl: '//aufstehen.io/img/mega.png',
 	//shadowUrl: '//map.aufstehen.io/img/leaf-shadow.png',
-          iconSize:     [17, 14], // size of the icon
+          iconSize:     [34, 28], // size of the icon
          //  shadowSize:   [50, 64], // size of the shadow
           // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
           // shadowAnchor: [4, 62],  // the same for the shadow
@@ -199,7 +199,7 @@ var MapManager = (function($, d3, leaflet) {
  var GREEN_ICON = L.icon({
           iconUrl: '//aufstehen.io/img/flag.png',
 	//shadowUrl: '//map.aufstehen.io/img/leaf-shadow.png',
-          iconSize:     [17, 14], // size of the icon
+          iconSize:     [34, 28], // size of the icon
          //  shadowSize:   [50, 64], // size of the shadow
           // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
           // shadowAnchor: [4, 62],  // the same for the shadow
@@ -209,7 +209,7 @@ var MapManager = (function($, d3, leaflet) {
   var BLUE_ICON = L.icon({
           iconUrl: '//aufstehen.io/img/meeting.png',
 	//shadowUrl: '//map.aufstehen.io/img/leaf-shadow.png',
-          iconSize:     [17, 14], // size of the icon
+          iconSize:     [34, 28], // size of the icon
          //  shadowSize:   [50, 64], // size of the shadow
           // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
           // shadowAnchor: [4, 62],  // the same for the shadow
