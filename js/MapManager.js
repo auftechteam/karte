@@ -85,7 +85,7 @@ var Event = (function($) { return function(properties) {
 			     .append($("<input type='hidden' name='id_obfuscated'/>").val(that.properties.id_obfuscated))
                              .append($("<input type='text' name='email' placeholder='Email Adresse'/>"))
 			     //.append($("<input type='text' name='guests' placeholder='Teilnehmende'/>"))
-			      .append($("<input type='range' name='guests min="1" max="5" value="1"> <output name='numerisch'>5</output>"))
+			      .append($("<input type='range' name='guests min='1' max='5' value='1'> <output name='numerisch'>1</output>"))
                              .append($("<input type='submit' class='lato' value='Zusagen' />"))
                       )
                    )
