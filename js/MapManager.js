@@ -74,7 +74,7 @@ var Event = (function($) { return function(properties) {
             .append(that.properties.notes ? that.properties.notes : "")
             //Append RSVP Form
             .append($("<div class='event-rsvp-activity' />")
-                      .append($("<form class='event-form lato' oninput='numerisch.value=guests.value'>")
+                      .append($("<form class='event-form lato'>")
                              .append($("<h4/>").html("Anmelden zu <strong>" + that.properties.name + "</strong>"))
                              .append($("<div class='event-error' />"))
                              .append(shiftElems ? shiftElems : "")
@@ -85,7 +85,7 @@ var Event = (function($) { return function(properties) {
 			     .append($("<input type='hidden' name='id_obfuscated'/>").val(that.properties.id_obfuscated))
                              .append($("<input type='text' name='email' placeholder='Email Adresse'/>"))
 			     //.append($("<input type='text' name='guests' placeholder='Teilnehmende'/>"))
-			      .append($("<input type='range' name='guests min='1' max='5' value='1'> <output name='numerisch'>1</output>"))
+			      .append($("<form oninput='numerisch.value=guests.value'><input type='range' name='guests min='1' max='5' value='1'> <output name='numerisch'>1</output></form>"))
                              .append($("<input type='submit' class='lato' value='Zusagen' />"))
                       )
                    )
