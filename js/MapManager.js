@@ -85,21 +85,7 @@ var Event = (function($) { return function(properties) {
 			     .append($("<input type='hidden' name='id_obfuscated'/>").val(that.properties.id_obfuscated))
                              .append($("<input type='text' name='email' placeholder='Email Adresse'/>"))
 			     //.append($("<input type='text' name='guests' placeholder='Teilnehmende'/>"))
-			      .append($("<input type='range' name='guests min='1' max='5' value='1'>")window.addEventListener("load", function(){
-
-  // Range-Slider in Variable speichern 
-  var slider = document.querySelector("input[type='range']");
-
-  // EventListener für das Verändern des Sliders hinzufügen
-  slider.addEventListener("change", function(){
-
-    // Testelement verschieben, indem Inline-Styles eingefügt werden
-    document.querySelector(".element").style.transform = "translateX(" + this.value + "px";
-
-    // Wert des Range-Sliders anzeigen
-    document.querySelector(".range span").innerHTML = this.value;
-  });
-});)
+			      .append($("<form oninput='numerisch.value=guests.value'><input type='range' name='guests min='1' max='5' value='1'> <output name='numerisch'>1</output></form>"))
                              .append($("<input type='submit' class='lato' value='Zusagen' />"))
                       )
                    )
