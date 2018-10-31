@@ -386,7 +386,7 @@ var MapManager = (function($, d3, leaflet) {
 
       } else {
         // Other events
-        L.circlemarker(latLng, {
+        L.circleMarker(latLng, {
           radius: 10,
          // icon: RED_ICON,
 	  className: className//,
