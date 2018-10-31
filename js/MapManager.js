@@ -58,7 +58,7 @@ var Event = (function($) { return function(properties) {
                          .append($("<ul/>").append(shiftList))
 
         } // end of creating shift items
-        var aufstehen="aufstehen.de";
+        var aufstehen="#";
 	var rendered = $("<div class='lato'/>")
           .addClass('event-item ' + that.className)
           .append($("<div />").addClass('event-item lato ' + that.className+'').attr("lat",lat).attr("lon",lon) //appended lat-lon attributes to this class for marker highlighting
@@ -107,7 +107,7 @@ var Event = (function($) { return function(properties) {
                   $("<span class='rsvp-count'/>").text(that.properties.attendee_count + " SIGN UPS")
                 )
             )
-            .append($("<div class='rsvp-attending'/>").html('<a href="http://aufstehen.de" target="_blank">Du nimmst teil</a>'))
+            .append($("<div class='rsvp-attending'/>").html('<a href="#" target="_blank">Du nimmst teil</a>'))
           );
 
         return rendered.html();
@@ -337,8 +337,21 @@ var MapManager = (function($, d3, leaflet) {
     var addItemToMap = function(latLng, className) {
 
       // SNT events
-     /* if (className.match(/Kennenlerntreffen/)){
-        L.marker(latLng, {
+     if (className.match(/Kennenlerntreffen/)){
+       // Other events
+        L.circleMarker(latLng, {
+          radius: 10,
+         // icon: RED_ICON,
+	  className: className,
+          color: 'white',
+          fillColor: '#1462A2',
+          opacity: 0.8,
+          fillOpacity: 0.7,
+          weight: 2
+        }).on('click', function(e) { _popupEvents(e); })
+          .addTo(overlays);
+      }
+	     /*  L.marker(latLng, {
          // radius: 10,
           icon: GREEN_ICON,
 	  className: className//,
@@ -350,7 +363,7 @@ var MapManager = (function($, d3, leaflet) {
         }).on('click', function(e) { _popupEvents(e); })
           .addTo(overlays);
 
-      } else */ if (className.match(/Veranstaltung/)){
+      } */else if (className.match(/Veranstaltung/)){
         //L.marker(latLng, {
          // radius: 10,
           //icon: BLUE_ICON,
@@ -386,7 +399,7 @@ var MapManager = (function($, d3, leaflet) {
 
       } else {
         // Other events
-        L.circleMarker(latLng, {
+       /* L.circleMarker(latLng, {
           radius: 10,
          // icon: RED_ICON,
 	  className: className,
@@ -396,7 +409,7 @@ var MapManager = (function($, d3, leaflet) {
           fillOpacity: 0.7,
           weight: 2
         }).on('click', function(e) { _popupEvents(e); })
-          .addTo(overlays);
+          .addTo(overlays); */
       }
     };
 
