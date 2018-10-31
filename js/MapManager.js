@@ -340,7 +340,7 @@ var MapManager = (function($, d3, leaflet) {
      if (className.match(/Aktion/)){
        // Other events
         L.circleMarker(latLng, {
-          radius: 10,
+          radius: 7,
          // icon: RED_ICON,
 	  className: className,
           color: 'white',
@@ -377,8 +377,9 @@ var MapManager = (function($, d3, leaflet) {
           radius: 7,
           className: className,
           color: 'white',
-          fillColor: '#F55B5B',
-          opacity: 0.8,
+          //fillColor: '#F55B5B',
+          fillColor: '#ec0000',
+ 	  opacity: 0.8,
           fillOpacity: 0.7,
           weight: 2
         }).on('click', function(e) { _popupEvents(e); })
