@@ -337,7 +337,7 @@ var MapManager = (function($, d3, leaflet) {
     var addItemToMap = function(latLng, className) {
 
       // SNT events
-      if (className.match(/Kennenlerntreffen/)){
+     /* if (className.match(/Kennenlerntreffen/)){
         L.marker(latLng, {
          // radius: 10,
           icon: GREEN_ICON,
@@ -350,7 +350,7 @@ var MapManager = (function($, d3, leaflet) {
         }).on('click', function(e) { _popupEvents(e); })
           .addTo(overlays);
 
-      } else if (className.match(/Veranstaltung/)){
+      } else */ if (className.match(/Veranstaltung/)){
         //L.marker(latLng, {
          // radius: 10,
           //icon: BLUE_ICON,
