@@ -165,17 +165,17 @@
 <script src='//d1y0otadi3knf6.cloudfront.net/js/moment.min.js'></script> 
 <script src='//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/locale/de.js'></script>
 <script src='./js/js-cookie.js'></script>
-<script src='./js/MapManager.js?v=25'></script>
+<script src='./js/MapManager.js?v=26'></script>
 <script type='text/javascript'>
 window.eventTypeFilters = [
-  {
+ /* {
     name: 'Kennenlerntreffen',
     id:'Kennenlerntreffen',
     onItem: "<span class='map-purple-circle'></span>"
-  },
+  },*/
   {
-    name: 'Stammtisch',
-    id:'Stammtisch',
+    name: 'Veranstaltung',
+    id:'Veranstaltung',
     onItem: "<span class='map-red-circle'></span>"
   },
   /*{
@@ -200,7 +200,7 @@ window.eventTypeFilters = [
     id: 'rally'
   },*/
   {
-    name: 'Veranstaltung',
+    name: 'Aktion',
     id: 'other'
   }
 ];
@@ -231,7 +231,7 @@ $.ajax({
               case "Volunteer Activity or Meeting" : d.filters.push("volunteer"); break;
               case "Party Meetings" : d.filters.push("party-meetings"); break;
               case "Kennenlerntreffen" : d.filters.push("Kennenlerntreffen"); break;
-              case "Stammtisch" : d.filters.push("Stammtisch"); break;
+              case "Veranstaltung" : d.filters.push("Veranstaltung"); break;
               case "Rally" : d.filters.push("rally"); break;
               default: d.filters.push('other'); break;
             }
