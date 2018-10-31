@@ -337,7 +337,7 @@ var MapManager = (function($, d3, leaflet) {
     var addItemToMap = function(latLng, className) {
 
       // SNT events
-     if (className.match(/Kennenlerntreffen/)){
+     if (className.match(/Aktion/)){
        // Other events
         L.circleMarker(latLng, {
           radius: 10,
@@ -453,7 +453,7 @@ var MapManager = (function($, d3, leaflet) {
      *   Class name for map item
      */
     function getZIndex(className) {
-      if (className.match(/Kennenlerntreffen/)) {
+      if (className.match(/Aktion/)) {
         return 10
       } else if(className.match(/official\-event/ig)) {
         return 9
