@@ -84,7 +84,8 @@ var Event = (function($) { return function(properties) {
                              .append($("<input type='hidden' name='zipcode' value='90210' />"))
 			     .append($("<input type='hidden' name='id_obfuscated'/>").val(that.properties.id_obfuscated))
                              .append($("<input type='text' name='email' placeholder='Email Adresse'/>"))
-			     .append($("<input type='text' name='guests' placeholder='Teilnehmende'/>"))
+			     //.append($("<input type='text' name='guests' placeholder='Teilnehmende'/>"))
+			      .append($("<input type='hidden' name='guests' value='0'/>"))
 			     // .append($("<form oninput='numerisch.value=guests.value'><input type='range' name='guests min='1' max='5' value='1'> <output name='numerisch'>1</output></form>"))
                              .append($("<input type='submit' class='lato' value='Zusagen' />"))
                       )
@@ -349,16 +350,24 @@ var MapManager = (function($, d3, leaflet) {
         }).on('click', function(e) { _popupEvents(e); })
           .addTo(overlays);
 
-      } else if (className.match(/Stammtisch/)){
-        L.marker(latLng, {
+      } else if (className.match(/Veranstaltung/)){
+        //L.marker(latLng, {
          // radius: 10,
-          icon: BLUE_ICON,
-	  className: className//,
+          //icon: BLUE_ICON,
+	  //className: className//,
          // color: 'white',
           //fillColor: '#1462A2',
           //opacity: 0.8,
          // fillOpacity: 0.7,
           //weight: 2
+	 L.circleMarker(latLng, {
+          radius: 7,
+          className: className,
+          color: 'white',
+          fillColor: '#F55B5B',
+          opacity: 0.8,
+          fillOpacity: 0.7,
+          weight: 2
         }).on('click', function(e) { _popupEvents(e); })
           .addTo(overlays);
 
@@ -378,14 +387,14 @@ var MapManager = (function($, d3, leaflet) {
       } else {
         // Other events
         L.marker(latLng, {
-         // radius: 10,
-          icon: RED_ICON,
+          radius: 10,
+         // icon: RED_ICON,
 	  className: className//,
-         // color: 'white',
-          //fillColor: '#1462A2',
-          //opacity: 0.8,
-         // fillOpacity: 0.7,
-          //weight: 2
+          color: 'white',
+          fillColor: '#1462A2',
+          opacity: 0.8,
+          fillOpacity: 0.7,
+          weight: 2
         }).on('click', function(e) { _popupEvents(e); })
           .addTo(overlays);
       }
