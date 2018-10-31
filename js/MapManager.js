@@ -389,7 +389,7 @@ var MapManager = (function($, d3, leaflet) {
         L.circleMarker(latLng, {
           radius: 10,
          // icon: RED_ICON,
-	  className: className//,
+	  className: className,
           color: 'white',
           fillColor: '#1462A2',
           opacity: 0.8,
