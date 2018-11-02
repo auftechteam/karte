@@ -627,7 +627,7 @@ var MapManager = (function($, d3, leaflet) {
         .selectAll("li").remove();
 
       if (targetZipcode == undefined || !targetZipcode) {
-        $("#event-list").append("<li class='error lato'>PLZ nicht gefunden. <a href=\"aktiv@aufstehen.de\">Schreib eine Mail an</a></li>");
+        $("#event-list").append("<li class='error lato'>PLZ nicht gefunden. <a href=\"#\">Vertippt ?</a></li>");
         return;
       }
 
