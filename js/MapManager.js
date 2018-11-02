@@ -854,8 +854,9 @@ var VotingInfoManager = (function($) {
     //   return false;
     // }
 
-    $(this).find(".event-error").hide();
-    var $this = $(this)
+    var $this = $(this);
+    var $error = $this.find(".event-error");
+    $error.text("");
     $.ajax({
       cache: true,
       type: 'POST',
@@ -892,6 +893,13 @@ var VotingInfoManager = (function($) {
 
         $this.html("<h4 style='border-bottom: none'>Anmeldung erfolgreich! Danke für Deine Teilnahme!</h4>");
         $container.delay(1000).fadeOut('fast')
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        if (errorThrown == "error") {
+          $error.html('Registriere dich zuerst unter <a href="//www.aufstehen.de/mitmachen" target="_blank">aufstehen.de/mitmachen</a> mit dieser Email-Adresse').show();
+        } else {
+          $error.text('Ein unbekannter Fehler ist aufgetreten').show();
+        }
       }
     })
 
