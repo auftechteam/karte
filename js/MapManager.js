@@ -627,7 +627,7 @@ var MapManager = (function($, d3, leaflet) {
         .selectAll("li").remove();
 
       if (targetZipcode == undefined || !targetZipcode) {
-        $("#event-list").append("<li class='error lato'>PLZ nicht gefunden. <a href=\"https://jetzt.aufstehen.de/page/event/search_results?orderby=zip_radius&zip_radius%5b0%5d=" + zipcode + "&zip_radius%5b1%5d=100&country=DE&radius_unit=mi\">Try our events page</a></li>");
+        $("#event-list").append("<li class='error lato'>PLZ nicht gefunden. <a href=\"aktiv@aufstehen.de\">Schreib eine Mail an</a></li>");
         return;
       }
 
